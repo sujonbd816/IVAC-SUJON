@@ -3,7 +3,6 @@ app.directive('stopccp', function(){
         scope: {},
         link:function(scope,element){
             element.on('cut copy paste', function (event) {
-                event.preventDefault();
             });
         }
     };
@@ -27,7 +26,7 @@ app.directive("modalToggle",function(){
         scope.$watch(function(){ return scope.open_modal; }, function(value) {
             console.log(scope.open_modal);
             if (value) element.addClass('modal-show');
-            else element.removeClass('modal-show');
+            else element.removeClass('modal-hide');
         });
     }
 });
